@@ -11,10 +11,10 @@ parser.WithNotParsed(
         Environment.Exit(2);
     });
 
-await parser.WithParsedAsync(options => StartAnalysisAsync(options, host));
+await parser.WithParsedAsync(options => StartAnalysisAsync(options));
 await host.RunAsync();
 
-static async Task StartAnalysisAsync(ActionInputs inputs, IHost host)
+static async Task StartAnalysisAsync(ActionInputs inputs)
 {
     var operation = inputs.Operation;
     var value = inputs.Value;
