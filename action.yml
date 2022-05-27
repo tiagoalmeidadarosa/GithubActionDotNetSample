@@ -1,0 +1,20 @@
+name: 'Github Action DotNet Sample'
+description: 'A Github action written in C# that serves as a usage example'
+branding:
+  icon: upload
+  color: blue
+inputs:
+  value:
+    description: "The value to be converted."
+    required: true
+  operation:
+    description: "The operation to which the value will be converted."
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - '-v'
+  - ${{ inputs.value }}
+  - '-o'
+  - ${{ inputs.operation }}
