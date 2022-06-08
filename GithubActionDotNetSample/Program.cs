@@ -1,6 +1,6 @@
 ﻿using IHost host = Host.CreateDefaultBuilder(args).Build();
 
-var parser = Default.ParseArguments<ActionInputs>(() => new(), args);
+var parser = Parser.Default.ParseArguments<ActionInputs>(() => new(), args);
 parser.WithNotParsed(
     errors =>
     {
@@ -29,6 +29,10 @@ static async Task StartAnalysisAsync(ActionInputs inputs)
         case "FahrenheitToCelsius":
             var celsiusResult = (value - 32) / 1.8;
             Console.WriteLine($"{value}ºF is {celsiusResult}ºC");
+            break;
+
+        case "Sum":
+            Console.WriteLine($"{value} + {value} = {value + value}");
             break;
 
         default:
