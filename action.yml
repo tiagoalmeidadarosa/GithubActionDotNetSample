@@ -10,6 +10,10 @@ inputs:
   operation:
     description: "The operation to which the value will be converted."
     required: true
+# outputs:
+  # value-converted:
+    # description:
+      # 'The value converted to new temperature.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
